@@ -1,5 +1,12 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters":{
+    "BucketName":{
+      "Description":"Name of MyS3Bucket",
+      "Type":"String",
+      "default": "mys3bucket-test007"
+    }
+  },
   "Resources": {
     "S3Bucket":{
       "Type":"AWS::S3::Bucket",
