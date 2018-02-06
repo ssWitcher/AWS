@@ -4,7 +4,7 @@
     "BucketName":{
       "Description":"Name of MyS3Bucket",
       "Type":"String",
-      "default": "mys3bucket-test007"
+      "Default": "mys3bucket-test007"
     }
   },
   "Resources": {
