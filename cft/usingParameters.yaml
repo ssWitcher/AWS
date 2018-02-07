@@ -12,9 +12,9 @@ Parameters:
     Type: String
     Default: t2.micro
     AllowedValues:
-      - t1.micro
-      - t2.nano
-      - t2.small
+    - t1.micro
+    - t2.nano
+    - t2.small
     ConstriantDescription: Must be a valid EC2 Type
   DBPwd:
     NoEcho: true
