@@ -1,0 +1,43 @@
+Parameters:
+  SecurityGroupDescription:
+    Description: Security Group Description
+    Type: String
+  SecurityGroupPort:
+    Description: Simple Description for a numbered Parameters
+    Type: Number
+    MinValue: 1150
+    MaxValue: 65535
+  InstanceType:
+    Description: Sets up the configuration of the machine you want to Launch
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t1.micro
+      - t2.nano
+      - t2.small
+    ConstriantDescription: Must be a valid EC2 Type
+  DBPwd:
+    NoEcho: true
+    Description: The password of the admin account
+    Type: String
+  KeyName:
+    Description: The name of an existing key-pair that is used to SSH into the Ec2 instance
+    Type: AWS::EC2::KeyPair::KeyName
+    ConstriantDescription: Must be an existing key-pair
+  SecurityGroupIngressCIDR:
+    Description: The allowed IP rnage
+    Type: String
+    MinLength: '9'
+    MaxLength: '18'
+    Default: 0.0.0.0/0
+    ConstriantDescription: Must be a valid Range
+  MyVPC:
+    Description: VPC to operate in
+    Type: AWS::EC2::VPC:Id
+  MySubnetIDs:
+    Description: Subnet id is a list of subnet MySubnetIDs
+    Type: "List<AWS::EC2:Subnet:Id>"
+  DbSubnetIpBlocks:
+    Description: "Comma delimited list of three CIDR blocks"
+    Type: CommaDelimitedList
+    Default: "10.0.48.0/24, 10.0.112.0/24, 10.0.176.0/24"
